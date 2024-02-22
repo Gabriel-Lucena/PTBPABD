@@ -193,3 +193,32 @@ where id = 9;
 update pessoas
 set nome = 'Epimeteu'
 where id = 10;
+
+/*
+*    6) Escreva um select para visualizar as consultas de um médico (informe o id do médico)
+*/
+
+select * from consultas where id_medico = 1;
+
+/*
+*    7) Escreva um select para visualizar os exames de uma consulta (informe o id da consulta)
+*/
+
+select * from exames where id_consulta = 2;
+
+/*
+*    8) Escreva um select para visualizar todos os telefones de uma pessoa (informe o id da pessoa)
+*/
+
+select * from telefones where id_pessoa = 6;
+
+/*
+*    9)  Desafio 1: crie uma consulta (select) para visualizar todos os dados dos pacientes
+*        (devem ser exibidos os dados da tabela de pessoa e paciente ao mesmo tempo)
+*/
+
+
+/*
+*    10) Desafio 2: crie uma consulta (select) para visualizar todos os dados dos médicos
+*        (devem ser exibidos os dados da tabela de pessoa e medico ao mesmo tempo)
+*/
