@@ -189,7 +189,7 @@ insert into itens_pedidos values (3,4,3,4.5)
 insert into itens_pedidos values (4,3,2,1.2)
 insert into itens_pedidos values (4,5,2,0.85)
 
-insert into itens_pedidos values (4,5,1,0.85)
+insert into itens_pedidos values (5,5,1,0.85)
 select * from itens_pedidos
 
 -- 8.Consultar duas pessoas que possuem nome com alguma subpalavra 'super'
