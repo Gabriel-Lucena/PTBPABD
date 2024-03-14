@@ -3,7 +3,7 @@ create database consultorio;
 use consultorio;
 
 /*
-*    1) Criando as tabelas baseadas no diagrama do consultório apresentado
+*    1) Crie as tabelas baseadas no diagrama do consultório apresentado
 */
 
 create table pessoas(
@@ -66,7 +66,7 @@ create table enderecos(
 );
 
 /*
-*    2) Inserindo no mínimo 5 linhas para cada tabela
+*    2) Insira no mínimo 5 linhas para cada tabela
 */
 
 insert into pessoas
@@ -75,7 +75,12 @@ values
     ('1992-09-25', 'Feminino', 'Divorciado', '413481037'),
     ('1978-06-07', 'Masculino', 'Solteiro', '251747682'),
     ('2000-12-15', 'Feminino', 'Solteiro', '226163659'),
-    ('1999-04-03', 'Feminino', 'Casado', '460239028');
+    ('1999-04-03', 'Feminino', 'Casado', '460239028'),
+    ('1985-06-15', 'Masculino', 'Solteiro', '487512369'),
+    ('1992-02-03', 'Masculino', 'Casado', '905684217'),
+    ('1978-09-22', 'Feminino', 'Divorciado', '362159874'),
+    ('1989-05-11', 'Feminino', 'Viúvo', '741236598'),
+    ('1995-12-07', 'Masculino', 'Solteiro', '820574136');
 
 insert into medicos
 values
@@ -126,7 +131,7 @@ values
     (10, 'Alameda dos Girassóis', 52, '56789012', 'Bela Vista', 'Salvador', 'Bahia');
 
 /*
-*    3) Escrevendo e executando um select para exibir todos os dados de cada tabela
+*    3) Escreva e execute um select para exibir todos os dados de cada tabela
 */
 
 select * from pessoas;
@@ -144,14 +149,14 @@ select * from exames;
 select * from enderecos;
 
 /*
-*    4) Alterando a tabela de pessoas para adicionar o campo nome
+*    4) Altere a tabela de pessoas para adicionar o campo nome
 */
 
 alter table pessoas
-    add nome VARCHAR(75) NOT NULL;
+    add nome VARCHAR(75);
 
 /*
-*    5) Atualizando os registros da tabela de pessoas adicionando um nome para cada tupla (para cada pessoa)
+*    5) Atualize os registros da tabela de pessoas adicionando um nome para cada tupla (para cada pessoa)
 */
 
 update pessoas
@@ -217,8 +222,11 @@ select * from telefones where id_pessoa = 6;
 *        (devem ser exibidos os dados da tabela de pessoa e paciente ao mesmo tempo)
 */
 
+select * from pacientes inner join pessoas on pacientes.id_pessoa = pessoas.id;
 
 /*
 *    10) Desafio 2: crie uma consulta (select) para visualizar todos os dados dos médicos
 *        (devem ser exibidos os dados da tabela de pessoa e medico ao mesmo tempo)
 */
+
+select * from medicos inner join pessoas on medicos.id_pessoa = pessoas.id;
