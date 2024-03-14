@@ -1,6 +1,6 @@
 # Programação e Administração de Banco de Dados - Exercícios e Aulas
 
-Repositório da disciplina de [Programação e Administração de Banco de Dados](https://drive.ifsp.edu.br/s/CS3ah4zmKiNCYTy#pdfviewer){:target="_blank"} do curso de [Análise e Desenvolvimento de Sistemas](https://ptb.ifsp.edu.br/index.php/superiores/ads){:target="_blank"} do terceiro semestre do curso de [Análise e Desenvolvimento de Sistemas](https://ptb.ifsp.edu.br/index.php/superiores/ads){:target="_blank"} do [IFSP-Pirituba](https://ptb.ifsp.edu.br/){:target="_blank"}.
+Repositório da disciplina de [Programação e Administração de Banco de Dados](https://drive.ifsp.edu.br/s/CS3ah4zmKiNCYTy#pdfviewer) do curso de [Análise e Desenvolvimento de Sistemas](https://ptb.ifsp.edu.br/index.php/superiores/ads) do terceiro semestre do curso de [Análise e Desenvolvimento de Sistemas](https://ptb.ifsp.edu.br/index.php/superiores/ads) do [IFSP-Pirituba](https://ptb.ifsp.edu.br/).
 
 ## Ementa[^1]
 
@@ -58,4 +58,4 @@ Teorey, Toby J. [et al.]. **Projeto de modelagem de banco de dados: -** 2. ed. R
 
 ELMASRI, Ramez; NAVATHE, Shamkant B. **Sistemas de banco de dados.** 4 ed. São Paulo: Pearson Addison Wesley, 2005. 724 p.
 
-[^1]: [Fonte das informações](https://drive.ifsp.edu.br/s/CS3ah4zmKiNCYTy#pdfviewer){:target="_blank"}
+[^1]: [Fonte das informações](https://drive.ifsp.edu.br/s/CS3ah4zmKiNCYTy#pdfviewer)
