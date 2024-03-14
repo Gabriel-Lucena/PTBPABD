@@ -171,25 +171,25 @@ select * from pedidos
 
 
 -- Insert itens_pedidos
-insert into itens_pedidos values (15,1,10,0.8)
-insert into itens_pedidos values (15,2,10,2.5)
-insert into itens_pedidos values (15,3,10,1.2)
-insert into itens_pedidos values (15,4,10,4.5)
-insert into itens_pedidos values (15,5,10,0.85)
+insert into itens_pedidos values (1,1,10,0.8)
+insert into itens_pedidos values (1,2,10,2.5)
+insert into itens_pedidos values (1,3,10,1.2)
+insert into itens_pedidos values (1,4,10,4.5)
+insert into itens_pedidos values (1,5,10,0.85)
 
-insert into itens_pedidos values (16,1,5,0.8)
-insert into itens_pedidos values (16,2,5,2.5)
-insert into itens_pedidos values (16,3,5,1.2)
-insert into itens_pedidos values (16,4,5,4.5)
+insert into itens_pedidos values (2,1,5,0.8)
+insert into itens_pedidos values (2,2,5,2.5)
+insert into itens_pedidos values (2,3,5,1.2)
+insert into itens_pedidos values (2,4,5,4.5)
 
-insert into itens_pedidos values (17,2,3,2.5)
-insert into itens_pedidos values (17,3,3,1.2)
-insert into itens_pedidos values (17,4,3,4.5)
+insert into itens_pedidos values (3,2,3,2.5)
+insert into itens_pedidos values (3,3,3,1.2)
+insert into itens_pedidos values (3,4,3,4.5)
 
-insert into itens_pedidos values (18,3,2,1.2)
-insert into itens_pedidos values (18,5,2,0.85)
+insert into itens_pedidos values (4,3,2,1.2)
+insert into itens_pedidos values (4,5,2,0.85)
 
-insert into itens_pedidos values (19,5,1,0.85)
+insert into itens_pedidos values (4,5,1,0.85)
 select * from itens_pedidos
 
 -- 8.Consultar duas pessoas que possuem nome com alguma subpalavra 'super'
