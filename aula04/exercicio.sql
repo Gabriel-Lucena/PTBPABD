@@ -255,38 +255,81 @@ select * from pedidos where cli_codigo = 2 and fun_codigo = 6
 
 -- 23.	Consultar os pedidos que foram solicitados pelo cliente 2, registrados pelo funcionário 8 e conferidos pelo estagiário 5.
 
+select * from pedidos where cli_codigo = 2 and fun_codigo = 8 and est_codigo = 5
 
+-- 24.	Consultar a quantidade de itens vendidos
 
--- 24.	Consultar a quantidade de itens vendidos	
+select sum(itp_qtd) as quantidade_total from itens_pedidos
 
 -- 25.	Consultar a quantidade de pedidos do cliente 1.
 
+select count(*) as quantidade_pedidos from pedidos where cli_codigo = 1
+
 -- 26.	Consultar a quantidade de itens vendidos relacionada ao pedido 2.
+
+select count(*) as quantidade_itens from itens_pedidos where ped_numero = 2
 
 -- 27.	Consultar quantos pedidos foram registrados pelo funcionário 6
 
+select count(*) as quantidade_pedidos from pedidos where fun_codigo = 6
+
 -- 28.	Consultar quantas vezes o produto 3 foi vendido.
+
+select sum(itp_qtd) as quantidade_vendida from itens_pedidos where prd_codigo = 3
 
 -- 29.	Consultar todas as pessoas.
 
+select * from pessoas
+
 -- 30.	Consultar todos os dados dos clientes.
 
+select * from clientes
+
 -- 31.	Consultar nome, CPF, renda e crédito de todos os clientes.
+select pes_nome, pes_cpf, cli_renda, cli_credito from pessoas join clientes
+        on pessoas.pes_codigo = clientes.pes_codigo
 
 -- 32.	Consultar os produtos (descrição) e as quantidades vendidas no pedido 1.
 
+select prd_descricao, itp_qtd from itens_pedidos join produtos
+        on itens_pedidos.prd_codigo = produtos.prd_codigo where ped_numero = 1
+
 -- 33.	Consultar os produtos (descrição), quantidades vendidas, valores unitários e o valor de cada item do pedido 2.
+
+select prd_descricao, itp_qtd, prd_valor, itp_qtd * prd_valor as valor_total
+        from itens_pedidos join produtos on itens_pedidos.prd_codigo = produtos.prd_codigo
+        where ped_numero = 2
 
 -- 34.	Consultar número, data, nome do funcionário, nome do cliente e nome do estagiário de cada pedido.
 
+select ped_numero, ped_data,
+        (select pes_nome from pessoas where pes_codigo = fun_codigo) as nome_funcionario,
+        (select pes_nome from pessoas where pes_codigo = cli_codigo) as nome_cliente,
+        (select pes_nome from pessoas where pes_codigo = est_codigo) as nome_estagiario
+from pedidos
+
 -- 35.	Consultar código, nome, salário e o nome do supervisor de cada funcionário.
+
+select f.pes_codigo, f.pes_nome, f.fun_salario, s.pes_nome as supervisor from funcionarios as f
+        left join funcionarios as s on f.sup_codigo = s.pes_codigo
 
 -- 36.	 Consultar o valor de cada item vendido.
 
+select prd_descricao, itp_valor from itens_pedidos join produtos
+        on itens_pedidos.prd_codigo = produtos.prd_codigo
+
 -- 37.	Consultar o total vendido (faturado) até o momento.
+
+select sum(itp_qtd * itp_valor) as total_faturado from itens_pedidos
 
 -- 38.	Consultar o total da folha de pagamento dos supervisores.
 
--- 39.	Consultar o valor total do pedido 1.   
+select sum(fun_salario) as total_folha_supervisores from funcionarios where sup_codigo is not null
+
+-- 39.	Consultar o valor total do pedido 1.
+
+select sum(itp_qtd * itp_valor) as valor_total_pedido_1 from itens_pedidos where ped_numero = 1
 
 -- 40.	Consultar o total vendido do Produto 4
+
+select sum(itp_qtd) as total_vendido_produto_4 from itens_pedidos where prd_codigo = 4
