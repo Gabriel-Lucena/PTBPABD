@@ -12,15 +12,32 @@ select ped_numero, sum(pedidos.itp_qtd * pedidos.itp_valor) as
 
 -- 42. Consultar o total vendido do produto 3 em cada pedido.
 
+select ped_numero, sum(pedidos.itp_qtd) as Total_Vendido_3 from
+    itens_pedidos as pedidos where prd_codigo = 3 group by ped_numero;
+
 -- 43. Consultar os pedidos com valor total acima de R$ 30,00 reais.
+
+select ped_numero, sum(pedidos.itp_qtd * pedidos.itp_valor) as
+    Valor_Total_Pedido from itens_pedidos as pedidos group by ped_numero
+        having sum(pedidos.itp_qtd * pedidos.itp_valor) > 30.00;
 
 -- 44. Consultar a quantidade de itens por pedido.
 
+select ped_numero, sum(pedidos.itp_qtd) as Quantidade_Itens from
+    itens_pedidos as pedidos group by ped_numero;
+
 -- 45. Consultar a quantidade de vezes que cada produto foi vendido.
+
+select prd_codigo, sum(pedidos.itp_qtd) as Quantidade_Itens from
+    itens_pedidos as pedidos group by prd_codigo;
 
 -- 46. Consultar quantos pedidos cada cliente solicitou.
 
+select cli_codigo, count(cli_codigo) from pedidos group by cli_codigo;
+
 -- 47. Consultar quantos pedidos cada funcionário registrou.
+
+select fun_codigo, count(fun_codigo) from pedidos group by fun_codigo;
 
 -- 48. Consultar os pedidos que possuem mais do que 3 itens.
 
